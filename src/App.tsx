@@ -199,7 +199,7 @@ export default function App() {
             <div style={styles.contentRow}>
               <div style={styles.previewPane}>
                 <img
-                  src="/public/WallDrawing273.jpg"
+                  src="/WallDrawing273.jpg"
                   alt="Wall Drawing 273"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
