@@ -147,14 +147,33 @@ export default function App() {
     }
   }, [fingerPos, appState]);
 
-  const handleSave = useCallback(() => {
-    // Trigger browser save of canvas as PNG
+  const handleSave = useCallback(async () => {
     const canvas = document.querySelector("canvas");
     if (!canvas) return;
-    const link = document.createElement("a");
-    link.download = `wall-drawing-273-${Date.now()}.png`;
-    link.href = canvas.toDataURL();
-    link.click();
+
+    const base64 = canvas.toDataURL("image/png");
+
+    try {
+      const res = await fetch(
+        "https://wall-drawing-api-581317174663.us-central1.run.app/drawings",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ image: base64 }),
+        },
+      );
+      const data = await res.json();
+
+      // Also trigger a local download
+      const link = document.createElement("a");
+      link.download = `wall-drawing-273-${Date.now()}.png`;
+      link.href = base64;
+      link.click();
+
+      console.log("Saved to GCS:", data.url);
+    } catch (err) {
+      console.error("Save failed:", err);
+    }
   }, []);
 
   const handleReset = useCallback(() => {
