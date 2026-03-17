@@ -1,6 +1,6 @@
 // src/App.tsx
 // Orchestrates hand tracking, dwell detection, and drawing state.
-
+import { useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useHandTracking } from "./hooks/useHandTracking";
 import WallDrawing from "./components/WallDrawing";
@@ -56,6 +56,7 @@ import { GRID_SPACING } from "./lib/grid";
 type AppState = "loading" | "intro" | "drawing" | "done";
 
 export default function App() {
+  const navigate = useNavigate();
   const videoRef = useRef<HTMLVideoElement>(null);
   const { fingerPos, ready, startCamera } = useHandTracking(videoRef);
 
@@ -259,9 +260,11 @@ export default function App() {
               <button style={styles.button} onClick={handleStart}>
                 Begin
               </button>
-              <a href="/gallery" style={styles.galleryLink}>
+              <button
+                style={styles.galleryLink}
+                onClick={() => navigate("/gallery")}>
                 view all drawings
-              </a>
+              </button>
             </div>
           </div>
         </div>
