@@ -259,6 +259,9 @@ export default function App() {
               <button style={styles.button} onClick={handleStart}>
                 Begin
               </button>
+              <a href="/gallery" style={styles.galleryLink}>
+                view all drawings
+              </a>
             </div>
           </div>
         </div>
@@ -437,5 +440,12 @@ const styles: Record<string, React.CSSProperties> = {
     letterSpacing: "0.05em",
     cursor: "pointer",
     borderRadius: "4px",
+  },
+  galleryLink: {
+    fontFamily: "'Courier Prime', monospace",
+    fontSize: "11px",
+    letterSpacing: "0.2em",
+    color: "#888",
+    textDecoration: "underline",
   },
 };
