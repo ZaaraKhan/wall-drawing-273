@@ -67,7 +67,7 @@ const styles: Record<string, React.CSSProperties> = {
   root: {
     minHeight: "100vh",
     background: "#f7f4ef",
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     color: "#1a1a1a",
     overflowY: "auto",
     cursor: "auto",
@@ -80,7 +80,7 @@ const styles: Record<string, React.CSSProperties> = {
   back: {
     background: "transparent",
     border: "none",
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "12px",
     letterSpacing: "0.15em",
     color: "#888",
@@ -101,7 +101,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: "uppercase" as const,
   },
   title: {
-    fontFamily: "'IM Fell English', serif",
+    fontFamily: "'Jost', sans-serif",
     fontSize: "clamp(28px, 4vw, 42px)",
     fontWeight: 400,
     margin: 0,

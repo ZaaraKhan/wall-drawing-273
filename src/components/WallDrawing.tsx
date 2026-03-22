@@ -141,7 +141,6 @@ export default function WallDrawing({
         display: "block",
         width: "100vw",
         height: "100vh",
-        cursor: "none",
       }}
     />
   );

@@ -212,10 +212,7 @@ export default function App() {
       {appState === "intro" && (
         <div style={styles.overlay}>
           <div style={styles.introWrap}>
-            {/* Row 1 — Title */}
             <h1 style={styles.title}>Wall Drawing 273</h1>
-
-            {/* Row 2 — Two columns: image + text */}
             <div style={styles.contentRow}>
               <div style={styles.previewPane}>
                 <img
@@ -226,31 +223,39 @@ export default function App() {
               </div>
 
               <div style={styles.textPane}>
+                <div style={styles.quote}>
+                  <q>
+                    The execution was a perfunctory affair. The idea becomes a
+                    machine that makes the art.
+                  </q>
+                  <p style={styles.body}>Sol LeWitt</p>
+                </div>
+
                 <p style={styles.body}>
                   American artist Sol LeWitt (1928–2007) was a pioneer of
-                  Conceptual art, believing that the essence of an artwork is in
-                  the idea behind it, not its form. To illustrate this, he
-                  created his Wall Drawing series by writing instructions for
-                  geometric figures and sending them to draftsmen, who would
-                  physically create the works on walls around the world. LeWitt
-                  would never physically touch these Wall Drawings, but he
-                  remains the artist behind them. In his own words, "...the
-                  execution was a perfunctory affair. The idea becomes a machine
-                  that makes the art."
+                  Conceptual art, the idea that the essence of an artwork is in
+                  the idea behind it, not its form. He created his Wall Drawing
+                  series by writing instructions for geometric figures and
+                  sending them to draftsmen, who would physically create the
+                  works on walls around the world. LeWitt would never physically
+                  touch these Wall Drawings, but he remains the artist behind
+                  them.
                 </p>
                 <p style={styles.body}>
-                  This digital experience, inspired by Wall Drawing 273
-                  (September 1975), you will help create a unique conceptual
-                  artwork. Using your index finger, point to coordinates on a
-                  grid where different colored lines will meet; blue lines
-                  originating from the corners of the grid, red from the
-                  midpoints of the edges, and yellow from the center. Based on
-                  conceptualist thinking, are you the artist, or the draftsman?
+                  In this digital experience, inspired by Wall Drawing 273, you
+                  will help create a unique conceptual artwork. Using your index
+                  finger, point to coordinates on a grid where different colored
+                  lines will meet;{" "}
+                  <span style={{ color: "#0000cc" }}>blue</span> lines
+                  originating from the corners of the grid,{" "}
+                  <span style={{ color: "#cc0000" }}>red</span> from the
+                  midpoints of the edges, and{" "}
+                  <span style={{ color: "#ccaa00" }}>yellow</span> from the
+                  center. Based on conceptualist thinking, are you the artist,
+                  or the draftsman?
                 </p>
               </div>
             </div>
-
-            {/* Row 3 — Callout + Button */}
             <div style={styles.bottomRow}>
               <p style={styles.callout}>
                 Point your index finger at the grid.
@@ -297,7 +302,7 @@ export default function App() {
 
 const styles: Record<string, React.CSSProperties> = {
   label: {
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "11px",
     letterSpacing: "0.3em",
     color: "#888",
@@ -305,27 +310,27 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   instruction: {
-    fontFamily: "'IM Fell English', serif",
+    fontFamily: "'Jost', sans-serif",
     fontStyle: "italic",
     fontSize: "16px",
     color: "#444",
     lineHeight: 1.7,
   },
   legend: {
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "12px",
     letterSpacing: "0.1em",
     color: "#1a1a1a",
   },
   sub: {
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "12px",
     color: "#888",
     lineHeight: 1.8,
     letterSpacing: "0.02em",
   },
   mono: {
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "12px",
     letterSpacing: "0.2em",
     color: "#888",
@@ -338,7 +343,7 @@ const styles: Record<string, React.CSSProperties> = {
     background: "transparent",
     border: "1px solid #1a1a1a",
     color: "#1a1a1a",
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "11px",
     letterSpacing: "0.15em",
     cursor: "pointer",
@@ -348,7 +353,7 @@ const styles: Record<string, React.CSSProperties> = {
     position: "fixed",
     bottom: "24px",
     left: "24px",
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "11px",
     letterSpacing: "0.15em",
     color: "#aaa",
@@ -363,7 +368,7 @@ const styles: Record<string, React.CSSProperties> = {
     background: "transparent",
     border: "1px solid #1a1a1a",
     color: "#1a1a1a",
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "11px",
     letterSpacing: "0.15em",
     cursor: "pointer",
@@ -388,7 +393,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
   },
   title: {
-    fontFamily: "'IM Fell English', serif",
+    fontFamily: "'Jost', sans-serif",
     fontSize: "clamp(28px, 4vw, 42px)",
     fontWeight: 400,
     color: "#1a1a1a",
@@ -399,7 +404,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "48px",
-    alignItems: "start",
+    alignItems: "center",
   },
   previewPane: {
     width: "100%",
@@ -414,10 +419,15 @@ const styles: Record<string, React.CSSProperties> = {
     gap: "16px",
   },
   body: {
-    fontFamily: "'Courier Prime', monospace",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "12px",
     color: "#444",
     lineHeight: 1.5,
+  },
+  quote: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "5px",
   },
   bottomRow: {
     display: "flex",
@@ -426,7 +436,7 @@ const styles: Record<string, React.CSSProperties> = {
     gap: "20px",
   },
   callout: {
-    fontFamily: "'IM Fell English', serif",
+    fontFamily: "'Jost', sans-serif",
     fontStyle: "italic",
     fontSize: "18px",
     color: "#1a1a1a",
@@ -438,17 +448,21 @@ const styles: Record<string, React.CSSProperties> = {
     background: "#3a3a3a",
     border: "none",
     color: "#f7f4ef",
-    fontFamily: "'IM Fell English', serif",
+    fontFamily: "'Jost', sans-serif",
     fontSize: "18px",
     letterSpacing: "0.05em",
     cursor: "pointer",
     borderRadius: "4px",
   },
   galleryLink: {
-    fontFamily: "'Courier Prime', monospace",
+    background: "transparent",
+    border: "none",
+    fontFamily: "'Verdana', sans-serif",
     fontSize: "11px",
     letterSpacing: "0.2em",
     color: "#888",
+    cursor: "pointer",
+    padding: 0,
     textDecoration: "underline",
   },
 };
