@@ -6,8 +6,6 @@ A digital interpretation of Sol LeWitt's *Wall Drawing 273* (1975).
 > Wall 7: Red lines from the midpoints of four sides, blue lines from four corners, yellow lines from the center.
 > The number of lines and their length are determined by the draftsman.
 
-You are the draftsman. Your hand completes the work.
-
 ---
 
 ## How it works
@@ -21,6 +19,7 @@ You are the draftsman. Your hand completes the work.
 - All 9 source points draw a line to your chosen destination simultaneously
 - Keep selecting points until the wall feels complete
 - Save your drawing as a PNG
+- View others' versions
 
 ---
 
@@ -42,30 +41,8 @@ Open http://localhost:5173 — allow webcam access when prompted.
 - HTML Canvas API (drawing)
 - Vite
 
-No backend. No API keys. The piece runs entirely in the browser.
-
----
-
-## Project structure
-
-```
-wall-drawing-273/
-├── src/
-│   ├── components/
-│   │   └── WallDrawing.tsx     # Canvas renderer
-│   ├── hooks/
-│   │   └── useHandTracking.ts  # MediaPipe wrapper
-│   ├── lib/
-│   │   └── grid.ts             # Grid geometry + line logic
-│   ├── App.tsx                 # State orchestration
-│   ├── main.tsx
-│   └── index.css
-├── index.html
-├── vite.config.ts
-└── tsconfig.json
-```
-
----
+BACKEND:
+https://github.com/ZaaraKhan/wall-drawing-api
 
 ## Notes
 
